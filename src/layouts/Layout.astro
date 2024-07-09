@@ -27,9 +27,9 @@ const { title } = Astro.props;
         <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
     </head>
     <body>
-        <div>
+        <div class="layout">
             <Header />
-            <main class="grow"><slot /></main>
+            <main class="main"><slot /></main>
             <Footer />
         </div>
     </body>

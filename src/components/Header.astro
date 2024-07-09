@@ -1,22 +1,51 @@
 ---
 import Logo from '../components/Logo.astro';
 
-const navItems = [{ linkText: 'Home', href: '/' }];
+const navItems = [
+    {
+        linkText: 'Home',
+        href: '/'
+    },
+    {
+        linkText: 'About',
+        href: '/#about'
+    },
+    {
+        linkText: 'Schedule',
+        href: '/#schedule'
+    },
+    {
+        linkText: 'Info',
+        href: '/#info'
+    },
+    {
+        linkText: 'Venue',
+        href: '/#venue'
+    },
+    {
+        linkText: 'Contacts',
+        href: '/#contacts'
+    }
+];
 ---
 
-<nav>
-    <a href="/">
+<header class="header">
+    <a href="/" class="header__logo">
         <Logo />
     </a>
-    {
-        !!navItems?.length && (
-            <ul>
-                {navItems.map((item) => (
-                    <li>
-                        <a href={item.href}>{item.linkText}</a>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
-</nav>
+    <nav class="header__nav">
+        {
+            !!navItems?.length && (
+                <ul class="header__nav__list">
+                    {navItems.map((item) => (
+                        <li class="header__nav__item">
+                            <a class="header__nav__link" href={item.href}>
+                                {item.linkText}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+    </nav>
+</header>
