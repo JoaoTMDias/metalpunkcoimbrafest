@@ -1,0 +1,63 @@
+@keyframes animate-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes animate-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+.about {
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--color-background);
+    position: relative;
+    overflow: hidden;
+
+    @media (min-width: 60rem) {
+        padding: 9.5rem 0;
+    }
+
+    &__content {
+        max-width: clamp(16rem, 50vw, 40rem);
+        animation: animate-in ease-in-out forwards, animate-out ease-in-out forwards;
+        animation-timeline: view();
+        animation-range: entry, exit;
+        z-index: 1;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    &__description {
+        font-family: var(--layout-font-body);
+        font-size: clamp(1.125rem, 20vw, 1.5rem);
+    }
+
+    &__flash {
+        content: '';
+        position: absolute;
+        inset: auto;
+        width: 11.25rem;
+        z-index: 0;
+    }
+}

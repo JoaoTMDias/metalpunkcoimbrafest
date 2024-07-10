@@ -1,34 +1,16 @@
 ---
-import Logo from '../components/Logo.astro';
-
-const navItems = [
-    {
-        linkText: 'Início',
-        href: '/'
-    },
-    {
-        linkText: 'Sobre',
-        href: '/#about'
-    },
-    {
-        linkText: 'Bandas',
-        href: '/#schedule'
-    },
-    {
-        linkText: 'Local',
-        href: '/#info'
-    }
-];
+import { NAV_ITEMS } from '../constants/menu';
+import Skull from './Skull.astro';
 ---
 
-<header class="header">
-    <Logo />
+<header class="header" data-testid="mpx-header">
+    <Skull />
 
     <nav class="header__nav">
         {
-            !!navItems?.length && (
+            !!NAV_ITEMS?.length && (
                 <ul class="header__nav__list">
-                    {navItems.map((item) => (
+                    {NAV_ITEMS.map((item) => (
                         <li class="header__nav__item">
                             <a class="header__nav__link" href={item.href}>
                                 {item.linkText}

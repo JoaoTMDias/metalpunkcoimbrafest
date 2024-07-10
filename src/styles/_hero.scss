@@ -1,0 +1,100 @@
+@keyframes animate-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes animate-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+.hero {
+    --hero-gap: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    gap: var(--hero-gap);
+    padding: var(--hero-gap) 0;
+
+    @media (min-width: 60rem) {
+        --hero-gap: 4.5rem;
+    }
+
+    &__logo {
+        width: auto;
+        height: min(50vh, 7rem);
+        margin: 0;
+        padding: 0;
+
+        @media (min-width: 60rem) {
+            height: min(30vh, 14rem);
+        }
+    }
+
+    &__title {
+        font-size: clamp(2rem, 9vw, 7rem);
+        line-height: 0.85;
+    }
+
+    &__title,
+    &__event {
+        font-family: var(--layout-font-heading);
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        color: var(--color-text);
+        max-width: 50vw;
+        text-transform: uppercase;
+        text-shadow: 0 4px 2px hsl(0deg 0% 0% / 25.88%);
+    }
+
+    &__brush {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: auto;
+        z-index: -1;
+        width: clamp(24rem, 90vw, 50rem);
+
+        @media (min-width: 60rem) {
+            width: 60vw;
+        }
+    }
+
+    &__skull {
+        min-width: 3.125rem;
+        min-height: 3rem;
+        width: clamp(3.125rem, 10vw, 12rem);
+        height: auto;
+        transform: rotate(10deg);
+    }
+
+    &__event {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: clamp(1.75rem, 4vw, 7rem);
+        line-height: 0.95;
+        animation: animate-in linear forwards, animate-out linear forwards;
+        animation-timeline: view();
+        animation-range: entry, exit;
+    }
+}

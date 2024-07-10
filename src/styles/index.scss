@@ -57,6 +57,12 @@ html {
     grid-column: 1/-1;
 }
 
+hr {
+    background-color: var(--color-text);
+    height: 0.1875rem;
+    width: 100%;
+}
+
 @import './header';
 @import './main';
 @import './footer';
