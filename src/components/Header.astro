@@ -3,36 +3,27 @@ import Logo from '../components/Logo.astro';
 
 const navItems = [
     {
-        linkText: 'Home',
+        linkText: 'Início',
         href: '/'
     },
     {
-        linkText: 'About',
+        linkText: 'Sobre',
         href: '/#about'
     },
     {
-        linkText: 'Schedule',
+        linkText: 'Bandas',
         href: '/#schedule'
     },
     {
-        linkText: 'Info',
+        linkText: 'Local',
         href: '/#info'
-    },
-    {
-        linkText: 'Venue',
-        href: '/#venue'
-    },
-    {
-        linkText: 'Contacts',
-        href: '/#contacts'
     }
 ];
 ---
 
 <header class="header">
-    <a href="/" class="header__logo">
-        <Logo />
-    </a>
+    <Logo />
+
     <nav class="header__nav">
         {
             !!navItems?.length && (

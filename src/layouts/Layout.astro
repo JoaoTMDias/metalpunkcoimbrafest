@@ -1,9 +1,9 @@
 ---
 import '../../src/styles/index.scss';
 import '@fontsource/inter/400.css';
-import '@fontsource/inter/800.css';
+import '@fontsource/road-rage';
+import roadRage400 from '@fontsource/road-rage/files/road-rage-latin-400-normal.woff2?url';
 import interFont400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
-import interFont800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -20,11 +20,12 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
+        <meta name="description" content="Um festival independente, underground e anti-fascista de metal e punk" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preload" as="font" type="font/woff2" href={roadRage400} crossorigin />
         <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
-        <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
     </head>
     <body>
         <div class="layout">
