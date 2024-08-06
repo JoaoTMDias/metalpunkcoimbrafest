@@ -51,6 +51,7 @@
     &__description {
         font-family: var(--layout-font-body);
         font-size: clamp(1.125rem, 20vw, 1.5rem);
+        margin-bottom: 1.5rem;
     }
 
     &__flash {
